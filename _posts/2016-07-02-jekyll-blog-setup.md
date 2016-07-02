@@ -8,11 +8,7 @@ author: Myoungho Pak
 ---
 
 마음만 먹고 있다가 저도 드디어 Jekyll을 이용해서 블로그를 만들었습니다.
-
-이 글은 El captian에서 Jekyll로 블로그를 만들며 삽질한 내용이 담겨있습니다.
-
 Jekyll로 블로그를 만들고 싶은데 어떻게 해야할 지 막막한 분들이 보면 좋을 것 같네요.
-
 각종 **Trouble Shooting**은 최하단에 정리해 두었으니 하다가 막히는 부분이 있으면 참고하셔도 좋습니다.
 
 # Jekyll ?
@@ -35,14 +31,18 @@ permission error는 `sudo`를 붙여 해결합시다.
 
 이제 블로그를 만들 모든 준비가 되었습니다.
 [Jekyll Theme](http://jekyllthemes.org/)에서 원하는 테마를 다운로드 합니다.
+
 다운로드 한 후 해당 폴더에 들어가 Jekyll을 이용하여 로컬에 블로그를 띄워봅시다.
 
 ```Shell
 $ Jekyll serve
 ```
-이제 여러분은 **_config.yml**을 수정하여 나만의 블로그를 만들 수 있습니다.
+
+local에서는 [http://127.0.0.1:4000](http://127.0.0.1:4000)에서 확인하실 수 있습니다.
 
 # _config.yml
+
+이제 여러분은 **_config.yml**을 수정하여 나만의 블로그를 만들 수 있습니다.
 
 _config.yml이 밑에 있는 거와 동일 할 수는 없지만 참고용으로 적어두었습니다.
 
@@ -69,7 +69,7 @@ authors:
 위 스크립트를 보면 모두 url주소가 포함된 image 주소가 들어가 있지만
 `./assets/images/main.JPG` 같은 상대경로도 사용 가능합니다.
 
-# post 하기
+# Post 하기
 
 Theme에 따라 다르겠지만 기본적으로 모든 `Posts`들은 _posts 폴더에 파일을 만드는 것으로 포스팅 할 수 있습니다.
 
