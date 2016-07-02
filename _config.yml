@@ -7,13 +7,13 @@ gems:
   - jekyll-redirect-from
 
 # Site settings
-title: "박맹의 블로그"
+title: "Myoungho Pak"
 description: "쓰고싶은거 쓰는 블로그"
 email: 'qkraudghgh@gmail.com'
 #blog logo
 logo: "https://qkraudghgh.github.io/assets/images/profile.JPG"
 # blog cover
-cover: "https://qkraudghgh.github.io/assets/images/main.JPG"
+cover: "https://qkraudghgh.github.io/assets/images/profile.JPG"
 
 authors:
    Myoungho Pak:
