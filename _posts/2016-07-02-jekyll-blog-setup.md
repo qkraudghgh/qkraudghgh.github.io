@@ -89,7 +89,7 @@ authors:
 저는 image를 모두 assets/images/ 폴더를 만들어 관리하고 있습니다. 
 
 위 스크립트를 보면 모두 url주소가 포함된 image 주소가 들어가 있지만
-`./assets/images/main.JPG` 같은 상대경로도 사용 가능합니다.
+`/assets/images/main.JPG` 같은 상대경로도 사용 가능합니다.
 
 # Post 하기
 

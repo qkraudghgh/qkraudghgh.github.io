@@ -18,7 +18,7 @@ cover: "https://qkraudghgh.github.io/assets/images/main.JPG"
 authors:
    Myoungho Pak:
      name: Myoungho Pak
-     image: "https://qkraudghgh.github.io/assets/images/profile.JPG"
+     image: "/assets/images/profile.JPG"
 
 paginate: 5
 
