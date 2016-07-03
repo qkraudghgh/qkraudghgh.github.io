@@ -14,6 +14,7 @@ Jekyll로 블로그를 만들고 싶은데 어떻게 해야할 지 막막한 분
 # 앞서
 해당 글은 Jekyll 설치부터 포스팅 하는 법 그리고 [github](https://github.com)에 호스팅 하는 법 까지 나와 있습니다.
 Ruby를 모르셔도 블로그를 만들고 호스팅하는데 문제 없지만 [Git](https://rogerdudler.github.io/git-guide/index.ko.html)을 모른다면 조금 힘들 수 도 있습니다.
+또한 모든 내용은 **Mac**을 기준으로 작성하였습니다!
 
 # Jekyll ?
 
