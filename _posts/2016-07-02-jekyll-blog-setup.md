@@ -38,6 +38,23 @@ permission error는 `sudo`를 붙여 해결합시다.
 
 다운로드 한 후 해당 폴더에 들어가 Jekyll을 이용하여 로컬에 블로그를 띄워봅시다.
 
+로컬에 블로그를 띄우기 전에 해야할 것이 하나 있습니다. 그것은 **jekyll**에서 사용하는 라이브러리들을 설치해야 합니다!
+해당 Theme에서 사용하고있는 라이브러리 들은 `_config.yml`의 최상단에 적혀있습니다.
+
+```Shell
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-mentions
+  - jekyll-redirect-from
+```
+
+저의 경우에는 이런식으로 5가지의 라이브러리가 필요합니다. `gem install jemoji`와 같은 명령어를 이용하여 모두 설치해줍시다!
+
+해당 라이브러리들의 설치가 끝난 후엔 아래의 명령어로 로컬에 띄워보세요.
+
 ```Shell
 $ Jekyll serve
 ```
