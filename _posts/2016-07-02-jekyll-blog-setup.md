@@ -122,7 +122,12 @@ Markdown에대한 정보는 [이 곳](https://github.com/adam-p/markdown-here/wi
 # GitHub에 호스팅 하기
 
 GitHub에 호스팅 하는 것도 무척 간단합니다.
-일단 github에 `username.github.io`의 Repo를 하나 만듭니다. 
+Github는 [github Page](https://pages.github.com/)라는 것을 이용해 Repository를 웹 페이지로 만들어주는 서비스를 제공하고 있습니다.
+우리는 이걸 이용해서 블로그를 호스팅 할 것이고 그러기 위해선 Repository를 하나 생성해야 합니다. Public이던 Private이던 상관 없습니다.
+
+github에 `username.github.io`의 Repo를 하나 만듭니다. 
+![username](https://qkraudghgh.github.io/assets/images/username.png)
+> **username**은 위 사진에서 *qkraudghgh*에 해당하는 부분입니다.
 
 제 경우엔 `qkraudghgh.github.io`이고 이는 repo의 이름이 되는 동시에 블로그의 url이 될 것입니다.
 
