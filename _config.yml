@@ -28,7 +28,7 @@ baseurl: ""
 twitter_handle: '@'
 
 #fill in disqus shortname to use disqus
-disqus: ''
+disqus: 'myounghopak'
 
 timezone: Asia/Seoul
 
