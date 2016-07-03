@@ -11,6 +11,10 @@ author: Myoungho Pak
 Jekyll로 블로그를 만들고 싶은데 어떻게 해야할 지 막막한 분들이 보면 좋을 것 같네요.
 각종 **Trouble Shooting**은 최하단에 정리해 두었으니 하다가 막히는 부분이 있으면 참고하셔도 좋습니다.
 
+# 앞서
+해당 글은 Jekyll 설치부터 포스팅 하는 법 그리고 [github](https://github.com)에 호스팅 하는 법 까지 나와 있습니다.
+Ruby를 모르셔도 블로그를 만들고 호스팅하는데 문제 없지만 [Git](https://rogerdudler.github.io/git-guide/index.ko.html)을 모른다면 조금 힘들 수 도 있습니다.
+
 # Jekyll ?
 
 [Jekyll 공식 한글 문서](https://jekyllrb-ko.github.io/)를 살펴보면 Jekyll은 Ruby의 Gem으로 제공되며
