@@ -11,9 +11,9 @@ title: "Myoungho Pak"
 description: "쓰고 싶은 것 쓰는 블로그"
 email: 'qkraudghgh@gmail.com'
 #blog logo
-logo: "https://qkraudghgh.github.io/assets/images/profile.JPG"
+logo: "/assets/images/profile.JPG"
 # blog cover
-cover: "https://qkraudghgh.github.io/assets/images/main.JPG"
+cover: "/assets/images/main.JPG"
 
 authors:
    Myoungho Pak:
