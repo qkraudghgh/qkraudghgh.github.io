@@ -81,7 +81,7 @@ cover: "https://qkraudghgh.github.io/assets/images/main.JPG"
 authors:
    Myoungho Pak:
      name: Myoungho Pak
-     image: https://qkraudghgh.github.io/assets/images/profile.JPG
+     image: "https://qkraudghgh.github.io/assets/images/profile.JPG"
 ```
 
 해당 블로그에서 이용하는 `Author`에 대한 정보는 모두 이 곳에서 수정 가능합니다.
