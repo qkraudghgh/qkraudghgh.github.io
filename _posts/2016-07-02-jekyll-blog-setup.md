@@ -54,6 +54,7 @@ gems:
 저의 경우에는 이런식으로 5가지의 라이브러리가 필요합니다. `gem install jemoji`와 같은 명령어를 이용하여 모두 설치해줍시다!
 
 해당 라이브러리들의 설치가 끝난 후엔 아래의 명령어로 로컬에 띄워보세요.
+만약 `nokogiri`관련 에러가 난다면 하단에 있는 **TroubleShooting**을 참고하세요!
 
 ```Shell
 $ Jekyll serve
