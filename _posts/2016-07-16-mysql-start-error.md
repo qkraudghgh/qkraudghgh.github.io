@@ -22,13 +22,10 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/usr/loc
 
 ```Shell
 $ mysql.server start
-```
 
-하지만 역시나 단번에 해결되지 않았습니다.
-
-```
 Starting MySQL
 ......................................
+
 ```
 
 계속해서 점만 늘어나고 Success가 뜨지 않았습니다. 혹시나 MySQL 데몬의 문제일까 하고 아래의 명령어를 실행했습니다.
