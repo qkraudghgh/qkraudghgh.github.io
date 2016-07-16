@@ -57,13 +57,10 @@ npm 으로 hubot generator를 설치합니다.
 
 ```Shell
 $ npm install -g yo generator-hubot
+$ mkdir myHobot && cd myHubot
 ```
 
 설치가 완료되면 hubot을 init해줄 폴더를 만들고 해당 Dir로 향합니다.
-
-```Shell
-$ mkdir myHobot && cd myHubot
-```
 
 디렉토리에 들어갔다면 아래 명령어를 통해 hubot을 만들어줍니다.
 
