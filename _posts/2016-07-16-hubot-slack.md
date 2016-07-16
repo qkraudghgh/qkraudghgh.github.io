@@ -11,7 +11,7 @@ author: Myoungho Pak
 
 # 머릿말
 
-처음 [Frientrip](https://www.frip.co.kr)에 들어갔을때 저는 말로만 듣던 slack을 처음 써봤습니다. 그리고 Frientrip에서는[Hubot](https://hubot.github.com/)과 Slack을 연동하여 다양한 용도로 사용하고 있었습니다. 점심먹고 난 후 간단한 내기부터 웹훅을 이용한 Github과 Trello 연동까지 프로그래밍 세계에 발을 들인지 얼마 안된 저는 신세계를 경험했죠. 입사후 몇일 동안 소스코드를 보면서 Hubot 스크립트도 덩달아 훑어봤었는데 그 것이 제가 9xd에서 Hubot을 운영하게된 계기가 된 것 같습니다.
+처음 [Frientrip](https://www.frip.co.kr)에 들어갔을때 저는 말로만 듣던 slack을 처음 써봤습니다. 그리고 Frientrip에서는 [Hubot](https://hubot.github.com/)과 Slack을 연동하여 다양한 용도로 사용하고 있었습니다. 점심먹고 난 후 간단한 내기부터 웹훅을 이용한 Github과 Trello 연동까지 프로그래밍 세계에 발을 들인지 얼마 안된 저는 신세계를 경험했죠. 입사후 몇일 동안 소스코드를 보면서 Hubot 스크립트도 덩달아 훑어봤었는데 그 것이 제가 9xd에서 Hubot을 운영하게된 계기가 된 것 같습니다.
 
 얼마전에 MS 최고 경영자인 [사티아 나델라](https://ko.wikipedia.org/wiki/%EC%82%AC%ED%8B%B0%EC%95%84_%EB%82%98%EB%8D%B8%EB%9D%BC)는 아래와 같은 말을 하기도 했습니다.
 
