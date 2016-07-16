@@ -63,7 +63,7 @@ $ npm install -g yo generator-hubot
 
 ```Shell
 $ mkdir myHobot && cd myHubot
-``
+```
 
 디렉토리에 들어갔다면 아래 명령어를 통해 hubot을 만들어줍니다.
 
@@ -151,7 +151,7 @@ $ git push heroku master
 - heroku toolbelt에서 해당 dyno에 연결되지 않은 경우
 
 ```Shell
-heroku git:remote -a your-dyno-name
+$ heroku git:remote -a your-dyno-name
 ```
 
 해당 명령어를 통해 git과 heroku dyno를 remote 시켜줍니다.
