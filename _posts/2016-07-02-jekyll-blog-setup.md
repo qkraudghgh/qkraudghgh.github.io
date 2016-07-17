@@ -26,7 +26,7 @@ Markdown 이나 HTML등을 이용하여 정적인 웹페이지를 만들어 줍�
 버전에따라 다르지만 mac에는 Ruby가 기본적으로 설치되어있고
 Ruby의 패키지 매니저인 Gem을 이용하여 Jekyll을 설치할 수 있습니다.
 
-```Shell
+```powershell
 $ gem install jekyll
 ```
 
@@ -42,7 +42,7 @@ permission error는 `sudo`를 붙여 해결합시다.
 로컬에 블로그를 띄우기 전에 해야할 것이 하나 있습니다. 그것은 **jekyll**에서 사용하는 라이브러리들을 설치해야 합니다!
 해당 Theme에서 사용하고있는 라이브러리 들은 `_config.yml`의 최상단에 적혀있습니다.
 
-```Shell
+```powershell
 # Build settings
 gems:
   - jemoji
@@ -57,7 +57,7 @@ gems:
 해당 라이브러리들의 설치가 끝난 후엔 아래의 명령어로 로컬에 띄워보세요.
 만약 `nokogiri`관련 에러가 난다면 하단에 있는 **TroubleShooting**을 참고하세요!
 
-```Shell
+```powershell
 $ Jekyll serve
 ```
 
@@ -69,7 +69,7 @@ local에서는 [http://127.0.0.1:4000](http://127.0.0.1:4000)에서 확인하실
 
 _config.yml이 밑에 있는 거와 동일 할 수는 없지만 참고용으로 적어두었습니다.
 
-```Shell
+```powershell
 # Site settings
 title: "Myoungho Pak"
 description: "쓰고싶은거 쓰는 블로그"
@@ -100,14 +100,14 @@ Theme에 따라 다르겠지만 기본적으로 모든 `Posts`들은 _posts 폴�
 
 파일 이름은 특별한 규칙에 의해서만 생성되어야 합니다.
 
-```Shell
+```powershell
 year-month-day-postsName.md
 ```
 지금 포스트는 `2016-07-02-jekyll-blog-setup.md`의 형태를 띄고 있습니다.
 
 `year-month-day-postsName.md` 상단엔 아래와 같은 내용의 스크립트가 들어가야합니다.
 
-```Shell
+```powershell
 ---
 layout: post
 title: "Jekyll로 블로그 만들기"
@@ -138,7 +138,7 @@ github에 `username.github.io`의 Repo를 하나 만듭니다.
 
 그 다음엔 해당 repo와 local 을 remote 해주어야 합니다.
 
-```Shell
+```powershell
 $ git init
 $ git remote add origin your_git_repo_URL
 $ git push origin master
@@ -152,7 +152,7 @@ $ git push origin master
 
 - `gem install jemoji`시에 error가 나는 경우
 
-```Shell
+```powershell
 sudo gem install nokogiri -- \
     --use-system-libraries \
     --with-iconv-dir=/path/to/dir \
