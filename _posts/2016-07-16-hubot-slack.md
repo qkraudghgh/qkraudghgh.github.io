@@ -57,7 +57,7 @@ npm 으로 hubot generator를 설치합니다.
 
 ```powershell
 $ npm install -g yo generator-hubot
-$ mkdir myHobot && cd myHubot
+$ mkdir myHubot && cd myHubot
 ```
 
 설치가 완료되면 hubot을 init해줄 폴더를 만들고 해당 Dir로 향합니다.
