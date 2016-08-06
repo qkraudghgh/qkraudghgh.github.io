@@ -1,44 +1,21 @@
-/* http://prismjs.com/download.html?themes=prism-solarizedlight&languages=markup+css+clike+javascript+c+csharp+cpp+ruby+go+groovy+java+json+kotlin+nginx+objectivec+python+r+jsx+rust+scala+sql+swift+typescript+yaml&plugins=line-highlight+line-numbers+show-language+highlight-keywords */
-/*
- Solarized Color Schemes originally by Ethan Schoonover
- http://ethanschoonover.com/solarized
-
- Ported for PrismJS by Hector Matos
- Website: https://krakendev.io
- Twitter Handle: https://twitter.com/allonsykraken)
-*/
-
-/*
-SOLARIZED HEX
---------- -------
-base03    #002b36
-base02    #073642
-base01    #586e75
-base00    #657b83
-base0     #839496
-base1     #93a1a1
-base2     #eee8d5
-base3     #fdf6e3
-yellow    #b58900
-orange    #cb4b16
-red       #dc322f
-magenta   #d33682
-violet    #6c71c4
-blue      #268bd2
-cyan      #2aa198
-green     #859900
-*/
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+c+coffeescript+git+jade+java+json+markdown+powershell+python+sql+swift+vim&plugins=line-highlight+line-numbers+command-line */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #657b83; /* base00 */
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-
 	line-height: 1.5;
 
 	-moz-tab-size: 4;
@@ -51,16 +28,6 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: #073642; /* base02 */
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: #073642; /* base02 */
-}
-
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
@@ -71,24 +38,25 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #fdf6e3; /* base3 */
+	background: #272822;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
+	white-space: normal;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #93a1a1; /* base1 */
+	color: slategray;
 }
 
 .token.punctuation {
-	color: #586e75; /* base01 */
+	color: #f8f8f2;
 }
 
 .namespace {
@@ -97,12 +65,15 @@ pre[class*="language-"] {
 
 .token.property,
 .token.tag,
-.token.boolean,
-.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #268bd2; /* blue */
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
 }
 
 .token.selector,
@@ -110,30 +81,32 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.builtin,
-.token.url,
 .token.inserted {
-	color: #2aa198; /* cyan */
+	color: #a6e22e;
 }
 
-.token.entity {
-	color: #657b83; /* base00 */
-	background: #eee8d5; /* base2 */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
 }
 
 .token.atrule,
 .token.attr-value,
-.token.keyword {
-	color: #859900; /* green */
+.token.function {
+	color: #e6db74;
 }
 
-.token.function {
-	color: #b58900; /* yellow */
+.token.keyword {
+	color: #66d9ef;
 }
 
 .token.regex,
-.token.important,
-.token.variable {
-	color: #cb4b16; /* orange */
+.token.important {
+	color: #fd971f;
 }
 
 .token.important,
@@ -147,6 +120,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
+
 pre[data-line] {
 	position: relative;
 	padding: 1em 0 1em 3em;
@@ -160,13 +134,10 @@ pre[data-line] {
 	margin-top: 1em; /* Same as .prism’s padding-top */
 
 	background: hsla(24, 20%, 50%,.08);
-	background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
+	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
 	pointer-events: none;
-	
+
 	line-height: inherit;
 	white-space: pre;
 }
@@ -188,12 +159,13 @@ pre[data-line] {
 		text-shadow: none;
 		box-shadow: 0 1px white;
 	}
-	
+
 	.line-highlight[data-end]:after {
 		content: attr(data-end);
 		top: auto;
 		bottom: .4em;
 	}
+
 pre.line-numbers {
 	position: relative;
 	padding-left: 3.8em;
@@ -234,32 +206,37 @@ pre.line-numbers > code {
 			padding-right: 0.8em;
 			text-align: right;
 		}
-div.prism-show-language {
-	position: relative;
+.command-line-prompt {
+	border-right: 1px solid #999;
+	display: block;
+	float: left;
+	font-size: 100%;
+	letter-spacing: -1px;
+	margin-right: 1em;
+	pointer-events: none;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-div.prism-show-language > div.prism-show-language-label {
-	color: black;
-	background-color: #CFCFCF;
-	display: inline-block;
-	position: absolute;
-	bottom: auto;
-	left: auto;
-	top: 0;
-	right: 0;
-	width: auto;
-	height: auto;
-	font-size: 0.9em;
-	border-radius: 0 0 0 5px;
-	padding: 0 0.5em;
-	text-shadow: none;
-	z-index: 1;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	-webkit-transform: none;
-	-moz-transform: none;
-	-ms-transform: none;
-	-o-transform: none;
-	transform: none;
+.command-line-prompt > span:before {
+	color: #999;
+	content: ' ';
+	display: block;
+	padding-right: 0.8em;
 }
+
+.command-line-prompt > span[data-user]:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+.command-line-prompt > span[data-user="root"]:before {
+	content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+	content: attr(data-prompt);
+}
+
