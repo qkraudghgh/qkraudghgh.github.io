@@ -55,7 +55,7 @@ v2.14.7
 
 npm 으로 hubot generator를 설치합니다.
 
-```powershell
+```bash
 $ npm install -g yo generator-hubot
 $ mkdir myHubot && cd myHubot
 ```
@@ -64,7 +64,7 @@ $ mkdir myHubot && cd myHubot
 
 디렉토리에 들어갔다면 아래 명령어를 통해 hubot을 만들어줍니다.
 
-```powershell
+```bash
 $ yo Hubot
                      _____________________________
                     /                             \
@@ -93,7 +93,7 @@ Owner와 Bot name 등은 아무렇게나 해도 되지만 Bot adapter는 꼭 **s
 
 # 로컬에서 테스트해보기
 
-```powershell
+```bash
 $ bin/hubot
 myhubot> myhubot ping
 myhubot> pong
@@ -108,7 +108,7 @@ myhubot> pong
 봇을 만들어 줍시다. Name은 원하는 것으로 등록해 주세요 이 곳에서 Hubot의 프로필 사진이나, 설명등을 바꿀 수 있습니다. 일단 여기서 제일 중요한
 Api Token을 기억해 주세요.
 
-```powershell
+```bash
 xoxb-4*********4-Q4*****Z0**FgP*****jT**w
 ```
 
@@ -120,7 +120,7 @@ heroku에 이미 가입하신 것을 전제로 하겠습니다.
 
 [Heroku Toolbelt](https://toolbelt.heroku.com/)에서 OSX에 맞는 toolbelt를 설치해주세요 설치가 완료됐다면 아래와 같은 명령어를 실행해주세요.
 
-```powershell
+```bash
 $ heroku login
       # 로그인 합니다.
 $ heroku create
@@ -132,7 +132,7 @@ $ heroku create
 
 계속해서 heroku toolbelt를 이용하여 설정해줍니다.
 
-```powershell
+```bash
 $ heroku config:add HUBOT_URL=http://*****.herokuapp.com
 $ heroku config:add HUBOT_SLACK_TOKEN=xoxb-4*********4-Q4*****Z0**FgP*****jT**w
 $ git init
@@ -147,7 +147,7 @@ $ git push heroku master
 
 - heroku toolbelt에서 해당 dyno에 연결되지 않은 경우
 
-```powershell
+```bash
 $ heroku git:remote -a your-dyno-name
 ```
 
