@@ -34,7 +34,7 @@ javascript context에서 `angular context`에 진입하기 위해선 `$apply()`�
 
 ![angular context 구조](/assets/images/angular-context.png)
 
-`$apply()`를 통해서 angular context에 진입하고나면 `$evalAsync queue`와 `$watch list`로 이루어진 `$digest loop`를 돌게됩니다.
+`$apply()`를 통해서 angular context에 진입하고나면 `$evalAsync queue`와 `$watch list`로 이루어진 `$digest loop`를 돌게됩니다 이때
 `digest loop`는 무한 loop를 방지하기위해 10회를 돌고나면 더이상 loop하지 않고 angular context를 빠져나오게 됩니다.
 
 - [`$evalAsync queue`](https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$evalAsync)는 새로운 $digest loop를 생성하지 않기위해 필요한 스케쥴 job입니다. 특정한 expression이 발생했을 때 이미 기존 $digest loop가 돌고 있다면 해당 작업은 새로운 $digest loop를 생성하는 것이 아니라 `$evalAsync queue`에 스케쥴로 추가되어 있다가 현재 $digest cycle이 다음 loop를 돌때 $watch list에 추가되어 $watch function에 의해 처리됩니다. 
