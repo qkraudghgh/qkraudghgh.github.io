@@ -91,11 +91,11 @@ app.config ($httpProvider) ->
 
 # 성능을 최적화 시키고 난 후..
 
-![최적화 전 TimeLine](/assets/images/optimize-pre.png)
+![최적화 전 TimeLine](/assets/images/optimize-pre.PNG)
 
 - 최적화 전 js Heap이 GC에 의해 제대로 줄어들지 않고 서서히 늘어나는 모습을 볼 수 있었습니다.
 
-![최적화 후 TimeLine](/assets/images/optimize-after.png)
+![최적화 후 TimeLine](/assets/images/optimize-after.PNG)
 
 - 최적화 후 js Heap이 GC에 의해 제대로 정리되고 있는 모습을 볼 수 있었습니다.
 
