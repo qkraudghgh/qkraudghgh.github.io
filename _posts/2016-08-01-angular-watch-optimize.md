@@ -58,7 +58,7 @@ javascript context에서 `angular context`에 진입하기 위해선 `$apply()`�
 
 model에 값을 update해주고 자동으로 view render까지 해주는 이 양방향 데이터 바인딩에도 단점은 존재합니다.
 
-문제는 바로 $digest loop에 있습니다. 우리가 뷰를 구성할 때 수 많은 양방향 데이터 바인딩을 이용한다면 $watch list에 있는 수많은 model들을 하나하나 dirtyChecking해야 할 것이고 이것은 곳 앵귤러의 성능 저하에 아주 직접적인 영향을 끼칩니다.
+문제는 바로 $digest loop에 있습니다. 우리가 뷰를 구성할 때 수 많은 양방향 데이터 바인딩을 이용한다면 $watch list에 있는 수많은 model들을 하나하나 dirtyChecking해야 할 것이고 이것은 앵귤러의 성능 저하에 아주 직접적인 영향을 끼칩니다.
 
 그래서 우리는 무분별한 양방향 데이터 바인딩을 지양하고 꼭 필요한 부분에만 양방향 데이터 바인딩을 이용해야 합니다.
 
