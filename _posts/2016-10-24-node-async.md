@@ -76,11 +76,10 @@ I'm Third!
 myApiCallFunction() // res로 [1,2,3,4,5] 를 주는 Api를 호출하는 function이다. 
   .then(res => {
     let temp = res;
-    let tempNum;
     temp.forEach(num => {
       num += 1;
     })
-    return tempNum; 
+    return temp; 
   })
   .then(res => {
     let temp2 = res;
