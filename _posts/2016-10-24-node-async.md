@@ -155,12 +155,38 @@ NodeJS가 Non-Blocking 방식을 이용하므로써 놀고있는 CPU자원까지
 이는 일부 Non-blocking을 지원하지 않는 I/O에 대해서 내부적으로 Non-blocking 방식으로 I/O를 처리하기 위해서 이용하는 Thread이고 실제로 요청을 처리하는
 Thread는 `Event Loop` 단일 쓰레드가 맞다.
 
-# TL;DR
+# 내가 했던 실수를 고쳐보자
 
-즉 I/O Bound Task들은 작업이 언제 끝나고 CallBack이 호출 될지 알 수 없다. 내가 앞에서 Promise의 `.then`으로 forEach문 2개를 나누어 준것은 의미가 없는 짓이었다.
-왜냐하면 단순히 V8을 이용한 CPU Bound Task들을 비동기적으로 호출 될 것을 우려하여 `.then`으로 반환한 callback function으로 나누어주었기 때문이다.
+즉 내가 앞에서 Promise의 `.then`으로 forEach문 2개를 나누어 준것은 의미가 없는 짓이었다.
+왜냐하면 비동기적으로 처리될리 없는 V8을 이용한 CPU Bound Task들이 비동기적으로 호출 될 것을 우려하여 
+`.then`으로 논리적일 뿐인 동기적 코드를 작성했기 때문이다.
 
-하지만 I/O bound Task가 끝난 후에 처리되어야 할 작업들이 있다면 Callback function 내에서 처리해주어야 한다. 즉 동기적으로 I/O Bound Task를 처리하고 싶다면 Callback function 내에서 다른 I/O Bound Task를 호출해야하고 이것이 몇 번 더 필요하다면 우리는 Callback이 중첩되는 흔히 말하는 CallBack Hell을 겪게될 것이다.
+위에서 실수라 했던 코드를 리펙토링 한다면 아래와 같이 쓸 수 있겠다.
+
+```javascript
+myApiCallFunction() // res로 [1,2,3,4,5] 를 주는 Api를 호출하는 function이다. 
+  .then(res => {
+    let temp = res;
+    temp.forEach(num => {
+      num += 1;
+      num += "입니다.";
+    }) 
+    return temp; 
+  })
+  .catch(err => {
+    alert(err); 
+  });
+```
+
+# CallBack Hell
+
+이러한 비동기적인 코드를 작성하다보면 우리는 언제 I/O Bound Task들이 끝나고 Callback이 호출됐는지 알 수 없다. 
+그래서 우리는 동기적인 코드가 필요할 때 task가 끝나면 반드시 호출되는 callback들을 이용해야한다.
+
+즉 여러개의 I/O Bound Task를 동기적으로 처리하고 싶다면 Callback function 내에서 다른 I/O Bound Task를 호출해야하고
+이러한 동기적 호출이 몇개나 더 필요하다면 Callback안에 Callback 그리고 더많은 Callback들을 이용해야한다. 
+
+우리는 이것을 `CallBack Hell`이라고 부른다.
 
 # 마치며
 
