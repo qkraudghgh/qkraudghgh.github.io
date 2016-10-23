@@ -31,7 +31,7 @@ fs.readFile("./practice.txt", (err, res) => {
 console.log("I'm Third!");
 ```
 
-이 예제는 NodeJs를 처음 접하면 접할 수 있는 당연히 접하게 되어있는 예제인데 console.log로 출력되는 문장을 차례대로 적어보면
+이 예제는 NodeJs를 처음 접하면 당연히 한번쯤 보게되어있는 예제인데 console.log로 출력되는 문장을 차례대로 적어보면
 
 ```javascript
 I'm First!
@@ -127,15 +127,17 @@ Client에서 I/O Bound 요청이 온다면 이 요청들은 Message 형태로 Ev
 `Event Loop`는 Event Queue에 있는 Task들을 Pop하여 Non-Blocking 방식으로 Kernel에 처리를 요청하며 작업이 끝난 Task들을 감지하고 `Callback function`을 호출한다.
 
 내부적으로 Non-Blocking function을 지원하지 않는 I/O task들을  Multi Thread Pool로 처리해주기도 한다.
-
+ 
 # Non-blocking I/O Model
-
+ 
 Event Loop에서 I/O bound Task들을 kenel에 요청하게 되는데 이때 Non-blocking I/O Model이라는 방식을 사용하게 된다.
 
 ![Non-blocking I/O Model](/assets/images/non-blocking.jpg)
 
-여기서 중요한 것은 application level의 recvfrom(read)를 통해서 kenel 단위로 system call을 하고나면 반환 받을 것이 있다면 data를 받고 반환 받을 것이 없다면
-EWOULDBLOCK이라는 상태를 반환 받는다는 것이 중요하다. EWOULDBLOCK이라는 상태를 반환 받게되면 `진행중` 이라는 의미이며 Blocking 방식과 다르게 Data를 받을 때까지 Thread가 멈춰서 대기하지 않아도 되며 다음 Process의 작업을 할 수 있게 된다.
+여기서 중요한 것은 application level의 recvfrom(read)를 통해서 kenel 단위로 system call을 하게된다.
+반환 받을 것이 있다면 data를 받고 반환 받을 것이 없다면 EWOULDBLOCK이라는 상태를 반환 받는다는 것이 중요하다. 
+EWOULDBLOCK이라는 상태를 반환 받게되면 `진행중` 이라는 의미이며 Blocking 방식과 다르게 Data를 받을 때까지 Thread가 멈춰서 대기하지 않아도 되고 
+다음 Process의 작업을 할 수 있게 된다.
 
 하지만 EWOULDBLOCK이라는 상태를 반환 받은 I/O task들을 갱신해주기 위해서 recvfrom을 계속 loop 돌며 data를 받을 때 까지 감시할 필요가 있는데,
 NodeJS에서는 이러한 것들을 처리해주기 위해 내부적으로 [libuv](https://github.com/libuv/libuv)라는 것을 사용하고 있다.
@@ -147,16 +149,18 @@ NodeJS에서는 이러한 것들을 처리해주기 위해 내부적으로 [libu
 만약 싱글 쓰레드에서 blocking I/O를 사용했다면 상대적으로 처리 시간이 긴 I/O Bound작업을 처리할 때 I/O Task가 끝날때 까지 Thread는 다음 작업을 진행하지 못하고
 대기하게 되는데 그렇다면 CPU자원은 사용하지 않고 놀고있는 상태가 될 것이다.
 
-NodeJS가 Non-Blocking 방식을 이용하므로써 놀고있는 CPU자원까지 끌어다 쓸 수 있게되었다. 그래서 흔히들 Node JS는 빠르다라고 얘기 할 수 있게 되었다.
-
+이러한 문제점을 해결하기위해 NodeJS는 Non-Blocking 방식을 이용하므로써 놀고있는 CPU자원까지 끌어다 쓸 수 있게되었다. 그래서 흔히들 Node JS는 빠르다라고 얘기 할 수 있게 되었다.
+ 
 # Multi Thread Pool
 기본적으로 NodeJS는 `Single Thread`를 사용한다고 알려져있지만 내부적으로는 추가로 Multi Thread Pool을 이용한다.
 
-이는 일부 Non-blocking을 지원하지 않는 I/O에 대해서 내부적으로 Non-blocking 방식으로 I/O를 처리하기 위해서 이용하는 Thread이고 실제로 요청을 처리하는
-Thread는 `Event Loop` 단일 쓰레드가 맞다.
+이는 일부 Non-blocking을 자체 지원하지 않는 I/O에 대해서 내부적으로 Non-blocking 방식으로 I/O를 처리하기 위해서 이용하는 Thread이다.
+Event Loop은 CallBack function을 붙여 thread들에게 요청을 할당하게된다.
 
+실제로 요청을 처리하는 Thread는 `Event Loop` 단일 쓰레드가 맞다.
+ 
 # 내가 했던 실수를 고쳐보자
-
+ 
 즉 내가 앞에서 Promise의 `.then`으로 forEach문 2개를 나누어 준것은 의미가 없는 짓이었다.
 왜냐하면 비동기적으로 처리될리 없는 V8을 이용한 CPU Bound Task들이 비동기적으로 호출 될 것을 우려하여 
 `.then`으로 논리적일 뿐인 동기적 코드를 작성했기 때문이다.
@@ -188,8 +192,18 @@ myApiCallFunction() // res로 [1,2,3,4,5] 를 주는 Api를 호출하는 functio
 
 우리는 이것을 `CallBack Hell`이라고 부른다.
 
-# 마치며
+# TL:DR
 
+결론적으로 NodeJS는 코드를 순차적으로 읽어가며 `CPU Bound task`를 만나면 V8 엔진을 통해 바로 값을 계산하고,
+`I/O Bound task`를 만나면 Event Queue에 등록하며 Event Loop에 의해 요청이 처리된다.
+
+이때 `I/O Bound task`의 요청은 언제 끝날지 알 수 없으며 다만 끝나면 무조건 호출되는 `CallBack Function`이 있다.
+
+Node Js는 `비동기적이다`라는 말은 I/O Bound Task의 요청을 던져두고 다른 작업 혹은 요청을 하다가.
+요청이 처리되면 `나도 모르는 시점`에 결과가 callback으로 호출되는 점을 두고 말하는 것이라고 할 수 있겠다.
+ 
+# 마치며
+ 
 나는 이 글을 쓰면서 나와 같은 실수를 했던 사람이 좀더 정확하고 자세하게 Node JS의 비동기에대해 알아가길 원했다. 다만 글을 쓰면서 내가 생각했던 것 보다 내가 모르고 있는게 많았고 그것을 깊게 공부하면서 초보에게 이해하기 쉽게 얘기하고 싶다는 목표를 달성하지 못한게 아닌가 싶기도 하다. 
 
 다음 글에서는 이 비동기적인 코드들을 동기적으로 작성할 수 있게 도와주는 Library들을 소개하고싶다.
