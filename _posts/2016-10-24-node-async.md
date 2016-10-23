@@ -119,6 +119,8 @@ NodeJS는 multi Thread 방식의 문제점을 보완하기위해 Single Thread +
 
 # Event Loop
 
+![event Loop](/assets/images/event-loop.jpg)
+
 `Event Loop`는 NodeJS의 싱글 쓰레드에서 돌아가며 I/O Bound 작업들을 비동기적으로 처리해주기 위해서 필요하다.
 
 Client에서 I/O Bound 요청이 온다면 이 요청들은 Message 형태로 Event Queue에 저장된다.
