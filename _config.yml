@@ -5,6 +5,7 @@ gems:
   - jekyll-feed
   - jekyll-mentions
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Site settings
 title: "Myoungho Pak"
