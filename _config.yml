@@ -11,10 +11,12 @@ gems:
 title: "Myoungho Pak"
 description: "쓰고 싶은 것 쓰는 블로그"
 email: 'qkraudghgh@gmail.com'
-#blog logo
+# blog logo
 logo: "/assets/images/profile.JPG"
 # blog cover
 cover: "/assets/images/main.JPG"
+# ga setting
+google_analytics: 'UA-89480511-1'
 
 authors:
    Myoungho Pak:
