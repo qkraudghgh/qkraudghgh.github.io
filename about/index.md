@@ -58,3 +58,22 @@ author: Myoungho Pak
 - **[Warp](https://github.com/SaturDJang/warp)**
   * Django Compressor에 ES6, Sass를 연동했습니다
   * Mobile Device 대응을 위해 Sass Structure를 구축했습니다.
+
+- **[YOP](https://github.com/9XDM/YOP)**
+  * [https://yop.cool](https://yop.cool)
+  * 개발자 회고 아카이브 서비스 YOP은 9XD 커뮤니티 멤버들의 첫 Toy project 입니다.
+  * Data Mining을 통해 서비스 최상단의 word-cloud와 language-chart를 만들었습니다.
+  * Post Create/Update/Delete, 썸네일 등록, 세션 및 보안 관리, 도메인 연동을 했습니다.
+  * 사용한 기술들
+    * AngularJs2, NodeJs, TypeScript, Gulp, Webpack, Firebase, Less, Data-mining
+
+## Translation
+- **[Clean-Code-Javascript-Ko](https://github.com/qkraudghgh/clean-code-javascript-ko)** ★71
+  * [원문](https://github.com/ryanmcdermott/clean-code-javascript) ★11059
+  * 첫 번역 작업으로 원문 Translate Section에 번역본이 Link 되어 있습니다.
+  * [PR#157](https://github.com/ryanmcdermott/clean-code-javascript/pull/157)
+
+## Talks
+- **[슬랙에 귀여운 휴봇하나 키워보자!](http://www.slideshare.net/ssuser8293c3/ss-70421811)**
+  * Talked at 9XD Christmas Meetup “Red black tree”, 2016-12-24 
+  * 휴봇을 슬랙에 연동하고 헤로쿠에 배포하는 방법에대해 이야기 했습니다.
