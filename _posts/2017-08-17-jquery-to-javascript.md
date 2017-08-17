@@ -71,15 +71,15 @@ addPlain이란 함수가 반복적으로 실행되는 것을 알 수 있다. (�
 2. 사용한 라이브러리의 디펜던시가 jQuery라서 어쩔 수 없는 경우.
 - 애초에 javascript로만 처음부터 작성했었더라면 다른 라이브러리를 찾거나 직접 만들었겠지만. 이미 사용하고 있던것을 다른 것으로 교체하는 것은 거의 불가능해서 그만두었다.
 
-# 3. 생각보다 jQuery를 없이 짜는 것이 어렵지 않았다.
+# 3. 생각보다 jQuery 없이 짜는 것이 어렵지 않았다.
 
 ## 아래에 몇가지 경우를 소개하겠다.
 
 ### Selector
 ```javascript
 // jQuery
-$('div.selector')
-$('div#selector')
+$('.selector')
+$('#selector')
 $('div.selector').find('.btn')
 
 // javascript
