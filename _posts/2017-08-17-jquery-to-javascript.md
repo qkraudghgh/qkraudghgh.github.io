@@ -7,7 +7,8 @@ tags: javascript
 author: Myoungho Pak
 ---
 
-최근에 `Plain Bagel`이란 팀에 프리랜서로 일하게 되면서 자막 에디터를 만들게 되었다.
+최근에 `Plain Bagel`이란 팀에 프리랜서로 일하게 되면서 자막 에디터를 만들게 되었다. jQuery만을 이용해 작업하였는데 이를 javascript로
+다시 작성하면서 느낀점을 적어본다.
 
 elixir 기반의 Phoenix framework를 사용해서 만든 어드민이 있었고. 그 어드민에 자막 에디터를 붙여야하는 상황이었다.
 어찌저찌 기술 스택을 고르다보니 프로젝트 하나를 몽땅 jQuery로 만들게 되었는데.
